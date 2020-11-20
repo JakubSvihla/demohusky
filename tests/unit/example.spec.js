@@ -1,12 +1,23 @@
-import { shallowMount } from '@vue/test-utils'
+import { render } from '@testing-library/vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
-    })
-    expect(wrapper.text()).toMatch(msg)
-  })
-})
+test('finds correct text 1', () => {
+ 
+  const { getByText } = render(HelloWorld)
+  getByText('Installed CLI Plugins');
+
+});
+
+test('finds correct text 2', () => {
+ 
+  const { getByText } = render(HelloWorld)
+  getByText('Essential Links');
+ 
+});
+
+test('finds correct text 3', () => {
+ 
+  const { getByText } = render(HelloWorld)
+  getByText('Ecosystem');
+ 
+});
